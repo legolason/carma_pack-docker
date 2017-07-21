@@ -101,6 +101,7 @@ RUN mkdir /carma && git clone https://github.com/brandonckelly/carma_pack.git $C
 
 RUN pip install astroML
 RUN pip install astroML_addons
+RUN pip install pyfits
 
 RUN apt-get install -qqy x11-apps
 ENV DISPLAY :0
