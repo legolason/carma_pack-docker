@@ -1,1 +1,0 @@
-xauth nlist :0 | sed -e 's/^..../ffff/' | xauth -f $XAUTH nmerge -;xauth nlist :0 | sed -e 's/^..../ffff/' | xauth -f $XAUTH nmerge -;DOUT=$(echo ;sudo docker run -ti -d -v $XSOCK:$XSOCK -v $XAUTH:$XAUTH -v /home/rumbaugh:/home/rumbaugh -e XAUTHORITY=$XAUTH carmapack /bin/bash);echo 'Container ID: $DOUT';sudo docker exec -it $DOUT /bin/bash
