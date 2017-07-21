@@ -1,0 +1,9 @@
+To use kali, some additional steps are required after using this Dockerfile to set up a container. You need to run the following commands in the container's terminal:
+
+git clone https://github.com/AstroVPK/kali.git $KALI_DIR
+cd $KALI_DIR
+./bin/setup.sh
+python setup.py install
+ldconfig
+export PYTHONPATH='/carma/kali/lib/:/carma/kali/python/:/carma/kali'
+
