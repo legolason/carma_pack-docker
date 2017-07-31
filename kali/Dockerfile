@@ -172,5 +172,6 @@ ENV KALI_DIR=/carma/kali
 RUN apt-get install -qqy x11-apps
 ENV DISPLAY :0
 RUN conda update libgcc
+RUN dbus-uuidgen >/etc/machine-id
 RUN apt-get install -y dvipng texlive-latex-extra
 ENV LC_ALL=C
