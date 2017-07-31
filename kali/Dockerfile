@@ -156,13 +156,14 @@ RUN cd /tmp && \
 	make install && \
 	rm -rf /tmp/nlopt-*
 
-RUN conda install pytest && conda install python=2.7
+RUN conda install pytest && conda install python=2.7 && conda install libgcc
 RUN pip install Cython
 RUN pip install future
 RUN pip install fitsio
 RUN pip install pytest
 RUN pip install gatspy
 RUN pip install multi_key_dict
+RUN apt-get update
 RUN apt-get install -y libgl1-mesa-glx libgl1-mesa-dev
 ENV KALI_DIR=/carma/kali
 
@@ -170,3 +171,6 @@ ENV KALI_DIR=/carma/kali
 
 RUN apt-get install -qqy x11-apps
 ENV DISPLAY :0
+RUN conda update libgcc
+RUN apt-get install -y dvipng texlive-latex-extra
+ENV LC_ALL=C
